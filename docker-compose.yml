@@ -1,0 +1,19 @@
+version: '2'
+services:
+  testlink:
+    container_name: 'testlink'
+    hostname: 'testlink'
+    image: 1000kit/testlink
+    ports:
+      - "8080:8080"
+    environment:
+      - TESTLINK_ADMIN_PASSWORD=testlink
+    volumes:
+      - /opt/volumes/1000kit/testlink/import:/import/
+      - testlinkdb:/var/lib/mysql
+
+volumes:
+  testlinkdb:
+
+    
+#END
